@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>Global configs</h3>
+  <%= link_to "Add new config", new_test_global_config_path %>
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Value Type</th>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <% @test_global_configs.each do |tgc| %>
+      <tr>
+        <td><%= tgc.name %></td>
+        <td><%= tgc.value %></td>
+        <td><%= tgc.value_type %></td>
+        <td><%= link_to "Edit", edit_test_global_config_path(tgc), class: "btn btn-primary" %></td>
+        <td><%= link_to "Destroy", test_global_config_path(tgc), :method => :delete, class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
